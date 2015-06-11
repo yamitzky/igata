@@ -7,7 +7,7 @@ module Igata
     end
 
     def create!(path)
-      Dir.mkdir(path)
+      Dir.mkdir(path) unless Dir.exists?(path)
       FileUtils.cp_r(Dir.glob("#{@template_path}/*"), path)
     end
   end

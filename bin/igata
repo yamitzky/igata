@@ -6,6 +6,8 @@ require "igata"
 
 if ARGV.length == 2 # is OK
   Igata::Cli.execute(ARGV[0], ARGV[1])
+elsif ARGV.length == 1
+  Igata::Cli.execute(ARGV[0], "./")
 else
   puts "Usage: igata [template-name] [path]"
 end
