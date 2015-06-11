@@ -6,6 +6,7 @@ module Igata
 
     def initialize(path)
       dic = YAML.load_file(path)
+      dic = {} unless dic
       @placeholders = dic.fetch("placeholder", [])
     end
   end
